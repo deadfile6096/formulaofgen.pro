@@ -1,0 +1,467 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+html,
+body {
+  position: relative;
+  background: url(../images/fons.png) center no-repeat;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-size: cover;
+}
+
+.marquee {
+  position: fixed;
+  top: -11px;
+  right: 0;
+  width: 100%;
+  background: hsla(219, 51%, 36%, 0.842);
+  color: #000;
+  padding: 10px;
+  font-size: 16px;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.center-content {
+  text-align: center;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.center-content h1 {
+  color: hsla(229, 89%, 19%, 0.842);
+  margin: 20px 0;
+}
+
+.center-content p {
+  color: hsla(229, 89%, 19%, 0.842);
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.tabs {
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.tab-button {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.tab-button.active {
+  color: hsla(229, 89%, 19%, 0.842);
+}
+
+.tabs-content {
+  display: flex;
+  justify-content: center;
+}
+
+.tab-content {
+  display: none;
+  width: 100%;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Сетка карточек */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+.ant-system {
+  font-family: "Courier New", Courier, monospace;
+  background: hsla(219, 51%, 36%, 0.842);
+  color: hsla(0, 0%, 100%, 0.842);
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.5);
+}
+
+.ant-system h1 {
+  text-align: center;
+}
+
+.ant-system table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.ant-system th,
+.ant-system td {
+  padding: 5px 10px;
+  text-align: left;
+}
+
+.ant-system th {
+  border-bottom: 1px solid hsla(229, 89%, 19%, 0.842);
+}
+
+.ant-system tbody tr:nth-child(odd) {
+  background: rgba(0, 255, 153, 0.1);
+}
+
+.card {
+  width: 560px;
+  height: 145px;
+  background: hsla(219, 51%, 36%, 0.842);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+  color: hsla(229, 89%, 19%, 0.842);
+  font-family: "Courier New", Courier, monospace;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.5);
+  max-height: 250px; /* Ограничиваем высоту карточки */
+  overflow: auto; /* Добавляем прокрутку, если текст не помещается */
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: hsla(229, 89%, 19%, 0.842);
+  text-transform: uppercase;
+}
+
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.side-cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Меньший размер колонок */
+  gap: 15px;
+  padding: 20px;
+  max-width: 100%; /* Убираем ограничения по ширине */
+}
+
+@media (max-width: 768px) {
+  .side-cards {
+    grid-template-columns: 1fr; /* Для мобильных устройств — одна колонка */
+    padding: 10px;
+  }
+  .card {
+    padding: 10px;
+    max-height: 200px;
+  }
+}
+
+/* Вкладка 2 */
+.tab-2-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.large-image img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.side-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-cards .card {
+  margin: 5px;
+}
+
+/* Базовые стили для шапки */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(69.7deg 92.97% 21.93% / 84.2%);
+  color: hsl(115, 100%, 40%);
+  margin-top: -5px;
+  padding: 0px 20px;
+  border-bottom: 4px solid hsl(69.7deg 92.97% 21.93% / 84.2%);
+  overflow: hidden; /* Скрывает текст за пределами контейнера */
+  height: 50px;
+}
+
+/* Анимация прокрутки текста */
+.scrolling-text {
+  font-family: "Lacquer", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  white-space: nowrap; /* Отключение переноса строк */
+  position: absolute;
+  left: 100%; /* Начало текста за пределами видимой области */
+  animation: scroll 10s linear infinite; /* Бесконечная прокрутка */
+  font-size: 1.2rem;
+  color: hsl(115, 100%, 40%);
+}
+
+/* Кнопки сверху */
+.top-buttons {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.top-buttons button {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  margin-left: 10px;
+  padding: 10px 15px;
+  background-color: hsla(219, 51%, 36%, 0.842);
+  color: hsl(115, 100%, 40%);
+  border: 2px solid hsla(219, 51%, 36%, 0.842);
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px hsl(221, 100%, 40%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.top-buttons button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px hsl(221, 100%, 40%);
+}
+
+/* Анимация движения */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Полностью уходит влево */
+  }
+}
+
+button {
+  background-color: hsla(219, 51%, 36%, 0.842);
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+.div {
+  background-color: hsla(219, 51%, 36%, 0.842);
+  border: 4px solid black;
+  position: relative;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.p {
+  font-size: 14px;
+  font-family: sans-serif;
+  position: absolute;
+  background-color: gray;
+  top: 0;
+  left: 0;
+}
+
+.bg {
+  background: rgba(39, 38, 38, 0.3); /* Полупрозрачный белый фон */
+  border-radius: 15px; /* Скругление углов */
+  border: 3px solid rgba(255, 255, 255, 0.2); /* Легкая окантовка */
+  margin: 10px;
+  width: 98.5vw;
+  height: 96vh;
+  backdrop-filter: blur(1px); /* Размытие фона за элементом */
+  -webkit-backdrop-filter: blur(10px); /* Для поддержки в Safari */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Добавляем легкую тень для реалистичности */
+}
+
+.bottom-line {
+  width: 100%;
+  height: 20px;
+  background-color: hsla(219, 51%, 36%, 0.842);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000; /* Убедитесь, что полоска будет сверху */
+}
+
+#ant-list {
+  max-height: 400px; /* Ограничиваем высоту контейнера */
+  overflow-y: auto; /* Включаем вертикальный скролл */
+  display: block; /* Делаем tbody блочным элементом */
+  height: auto;
+}
+
+.documentation {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 1400px;
+  height: 450px;
+  overflow-y: scroll;
+  display: flex;
+  margin: 20px;
+  background: #061730b0;
+}
+
+.sidebar h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 8px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #0073e6;
+  font-size: 1.1em;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.content .section {
+  margin-bottom: 40px;
+}
+
+.content h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.content ul {
+  margin-left: 20px;
+}
+
+.content ul li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.content code {
+  background-color: #f5f5f5;
+  padding: 2px 5px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.content strong {
+  font-weight: bold;
+}
+
+.content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.card-container {
+  width: 100%;
+  margin-left: 15px;
+  display: flex;
+}
+
+.card-container .card {
+  width: 435px;
+  height: 500px;
+  margin-right: 15px;
+  max-height: none;
+}
+
+#timer-container {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: hsla(229, 89%, 19%, 0.842);
+}
+
+#timer {
+  font-weight: bold;
+  color: hsl(115, 100%, 40%); /* Change to any color you prefer */
+}
+
+.card-wrapper {
+  margin-bottom: 20px;
+}
+
+.deployed-time {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: hsl(115, 100%, 40%);
+  margin-top: 10px;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* Ширина скроллбара */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Тёмный фон для трека */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #0f0, #0ff, #f0f);
+  border-radius: 6px; /* Скругление краёв */
+  box-shadow: 0 0 10px #0f0, 0 0 20px #0ff; /* Неоновый эффект */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    45deg,
+    #ff0,
+    #f0f,
+    #0ff
+  ); /* Цвета при наведении */
+  box-shadow: 0 0 15px #ff0, 0 0 25px #f0f; /* Более яркий эффект при наведении */
+}
+
+/* Для браузеров на основе Gecko (Firefox) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #0f0 #1a1a1a; /* Цвет бегунка и фона */
+}
